@@ -1,17 +1,58 @@
-# flutter_application_1
+# SignSpeak — Multilingual Sign Language to Speech Glove
 
-A new Flutter project.
+A B.Tech assistive technology project that converts hand gestures into spoken speech in 4 languages using a smart glove.
 
-## Getting Started
+## Demo
+> Tap a gesture ? App speaks instantly in English, Hindi, Tamil or Bengali
 
-This project is a starting point for a Flutter application.
+## Hardware
+| Component | Purpose |
+|-----------|---------|
+| ESP32 Dev Module | Main microcontroller + BLE |
+| 5x Flex Sensors | Finger bend detection |
+| MPU6050 | Hand orientation (gyro + accelerometer) |
+| OLED SSD1306 | On-glove display |
+| TP4056 + Li-Po | Battery charging + power |
+| ESD Anti-static Glove | Base glove |
+| 5x 10kO Resistors | Voltage dividers for flex sensors |
 
-A few resources to get you started if this is your first Flutter project:
+## App Features
+- 4 languages — English, Hindi, Tamil, Bengali
+- 20 gesture mappings per language
+- BLE auto-connect to glove
+- Male / Female voice selection
+- Speech history log
+- Gesture dictionary
+- Cyberpunk animated UI
+- Presentation mode
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Tech Stack
+- Flutter 3.41 (Android)
+- ESP32 Arduino (BLE GATT server)
+- flutter_tts (Text to Speech)
+- flutter_blue_plus (Bluetooth LE)
+- Provider (State management)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## How It Works
+1. Glove detects finger bend via flex sensors (ADC)
+2. ESP32 classifies gesture ? sends 2-digit ID over BLE
+3. Flutter app receives ID ? looks up phrase in JSON
+4. flutter_tts speaks the phrase in selected language
+
+## Setup
+```bash
+flutter pub get
+flutter run
+```
+Flash `esp32_firmware.ino` to ESP32 using Arduino IDE.
+
+## Languages
+| Code | Language | Sample |
+|------|----------|--------|
+| EN | English | "Hello" |
+| HI | Hindi | "Namaste" |
+| TA | Tamil | "Vanakkam" |
+| BN | Bengali | "Nomoshkaar" |
+
+---
+*Built with Flutter + ESP32 + BLE for assistive communication*
