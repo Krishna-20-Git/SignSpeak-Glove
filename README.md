@@ -1,4 +1,4 @@
-# SignSpeak — Multilingual Sign Language to Speech Glove
+# SignSpeak â€” Multilingual Sign Language to Speech Glove
 
 A B.Tech assistive technology project that converts hand gestures into spoken speech in 4 languages using a smart glove.
 
@@ -9,15 +9,14 @@ A B.Tech assistive technology project that converts hand gestures into spoken sp
 | Component | Purpose |
 |-----------|---------|
 | ESP32 Dev Module | Main microcontroller + BLE |
-| 5x Flex Sensors | Finger bend detection |
+| 4x Flex Sensors | Finger bend detection |
 | MPU6050 | Hand orientation (gyro + accelerometer) |
-| OLED SSD1306 | On-glove display |
-| TP4056 + Li-Po | Battery charging + power |
+| Power Bank| power supply |
 | ESD Anti-static Glove | Base glove |
 | 5x 10kO Resistors | Voltage dividers for flex sensors |
 
 ## App Features
-- 4 languages — English, Hindi, Tamil, Bengali
+- 4 languages â€” English, Hindi, Tamil, Bengali
 - 20 gesture mappings per language
 - BLE auto-connect to glove
 - Male / Female voice selection
